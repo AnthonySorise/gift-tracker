@@ -72,12 +72,16 @@ select {
     border-radius: 0.3125em;
 }
 
-select{
-    cursor: pointer;
+input[type="date"] {
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .field_with_errors{
     display: inline-block;
+}
+.date-container>.field_with_errors{
+    width: 100%;
 }
 
 .field_with_errors>input{
@@ -112,6 +116,12 @@ select{
 
 .link-container{
     display: inline-block;
-    margin-left: 1em;
-    margin-right:2em;
+}
+
+.link-container{
+    margin-left:1em;
+}
+
+.btn.edit{
+    margin-left:2em;
 }

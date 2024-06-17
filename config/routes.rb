@@ -1,11 +1,14 @@
+# config/routes.rb
 Rails.application.routes.draw do
     resources :friends do
-    resources :gifts
+      collection do
+        get 'gift_fields'
+      end
+      resources :gifts, only: [:new, :create, :edit, :update, :destroy]
     end
-
+  
     root "friends#index"
-
-    # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-    # Can be used by load balancers and uptime monitors to verify that the app is live.
+  
+    # Health check
     get "up" => "rails/health#show", as: :rails_health_check
 end

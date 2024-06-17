@@ -10,14 +10,23 @@
 
         <div class="form-group">
             <div>
-                <%= form.label :birthday, "Birthdate" %>
+                <%= form.label :birthday, "Birthday" %>
+                <span class="required">*</span>
             </div>
             <div class="date-container">
-                <%= form.date_select :birthday, discard_year: true, default: { day: 1, month: 1 } %>
+                <%= form.date_field :birthday, include_blank: true %>
             </div>
         </div>
     </div>
-
+  
+    <div class="gift-fields">
+        <%= form.fields_for :gifts, @friend.gifts do |gift_form| %>
+            <%= render 'gift_fields', f: gift_form %>
+        <% end %>
+    </div>
+  
+    <button type="button" id="add-gift">Add Gift</button>
+  
     <div class="actions">
         <%= form.submit %>
     </div>
