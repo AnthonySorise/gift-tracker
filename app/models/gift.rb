@@ -1,3 +1,3 @@
 class Gift < ApplicationRecord
-  belongs_to :friend
+    belongs_to :friend
 end
