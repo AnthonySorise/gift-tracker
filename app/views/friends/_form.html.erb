@@ -1,12 +1,21 @@
 <%= form_with(model: friend, local: true, data: { turbo: false }) do |form| %>
-    <div class="field">
-        <%= form.label :name, "Name" %>
-        <%= form.text_field :name %>
-    </div>
+    <div class="form-container">
+        <div class="form-group">
+            <div>
+                <%= form.label :name, "Name" %>
+                <span class="required">*</span>
+            </div>
+            <%= form.text_field :name %>
+        </div>
 
-    <div class="field">
-        <%= form.label :birthday, "Birthday" %>
-        <%= form.date_select :birthday, discard_year: true, default: { day: 1, month: 1 } %>
+        <div class="form-group">
+            <div>
+                <%= form.label :birthday, "Birthdate" %>
+            </div>
+            <div class="date-container">
+                <%= form.date_select :birthday, discard_year: true, default: { day: 1, month: 1 } %>
+            </div>
+        </div>
     </div>
 
     <div class="actions">
@@ -14,7 +23,7 @@
     </div>
 
     <% if friend.errors.any? %>
-        <div id="errorMessage">
+        <div id="error-message">
             <h2><%= pluralize(friend.errors.count, "error") %> prohibited this friend from being saved:</h2>
             <ul>
                 <% friend.errors.full_messages.each do |message| %>

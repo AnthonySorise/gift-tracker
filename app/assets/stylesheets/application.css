@@ -13,3 +13,105 @@
  *= require_tree .
  *= require_self
  */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+h1{
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+.form-container {
+    display: flex;
+    gap: 1.25em;
+    align-items: center;
+    margin-bottom: 0.3em;
+}
+
+label {
+    font-weight: bold;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 0.3em;
+}
+
+.field,
+.actions {
+    margin-bottom: 0.1em;
+}
+
+.date-container {
+    display: flex;
+    gap: 0.625em;
+}
+
+.date-container select {
+    flex: 1;
+    min-width: 6em;
+}
+
+.required {
+    color: red;
+    margin-left: 0.25em;
+}
+
+input,
+select {
+    padding: 0.625em;
+    margin:0.15em;
+    border: 0.0625em solid #ccc;
+    border-radius: 0.3125em;
+}
+
+select{
+    cursor: pointer;
+}
+
+.field_with_errors{
+    display: inline-block;
+}
+
+.field_with_errors>input{
+    min-width: -webkit-fill-available;
+}
+
+.actions{
+    margin: 2em 0;
+}
+
+.actions input[type="submit"],
+.actions .btn {
+    font-size: 1em;
+    text-decoration: none;
+    padding: 0.625em 1.25em;
+    background-color: #007bff;
+    border: none;
+    border-radius: 0.3125em;
+    color: white;
+    cursor: pointer;
+}
+
+.actions input[type="submit"]:hover,
+.actions .btn:hover {
+    background-color: #0056b3;
+}
+
+#error-message{
+    color:red;
+    font-weight: bold;
+}
+
+.link-container{
+    display: inline-block;
+    margin-left: 1em;
+    margin-right:2em;
+}

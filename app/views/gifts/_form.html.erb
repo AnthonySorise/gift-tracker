@@ -1,26 +1,31 @@
 <%= form_with(model: [@friend, @gift], local: true, data: { turbo: false }) do |form| %>  
-    <div class="field">
-        <%= form.label :description, "Description" %>
-        <%= form.text_field :description %>
+    <div class="form-container">
+        <div class="form-group">
+            <div>
+                <%= form.label :description, "Description" %>
+                <span class="required">*</span>
+            </div>
+            <%= form.text_field :description %>
+        </div>
+
+        <div class="form-group">
+            <%= form.label :price, "Price" %>
+            <%= form.text_field :price %>
+        </div>
+
+        <div class="form-group">
+            <%= form.label :link, "Link" %>
+            <%= form.text_field :link %>
+        </div>
     </div>
 
-    <div class="field">
-        <%= form.label :price, "Price" %>
-        <%= form.text_field :price %>
-    </div>
-
-    <div class="field">
-        <%= form.label :link, "Link" %>
-        <%= form.text_field :link %>
-    </div>
-  
     <div class="actions">
         <%= form.submit %>
     </div>
 
     <% if @gift.errors.any? %>
-        <div id="errorMessage">
-        <h2><%= pluralize(@gift.errors.count, "error") %> prohibited this gift from being saved:</h2>
+        <div id="error-message">
+            <h2><%= pluralize(@gift.errors.count, "error") %> prohibited this gift from being saved:</h2>
             <ul>
                 <% @gift.errors.full_messages.each do |message| %>
                     <li><%= message %></li>

@@ -1,7 +1,10 @@
-<h1>Friends</h1>
+<h1>Gift Tracker</h1>
+<h2>Friends</h2>
 <ul>
     <% @friends.each do |friend| %>
         <li><%= link_to friend.name, friend %></li>
     <% end %>
 </ul>
-<%= link_to 'New Friend', new_friend_path %>
+<div class="actions">
+    <%= link_to 'New Friend', new_friend_path, class: 'btn' %>
+</div>
