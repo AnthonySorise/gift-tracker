@@ -1,16 +1,16 @@
 <%= form_with(model: [@friend, @gift], local: true, data: { turbo: false }) do |form| %>  
     <div class="field">
-        <%= form.label :Description %>
+        <%= form.label :description, "Description" %>
         <%= form.text_field :description %>
     </div>
-  
+
     <div class="field">
-        <%= form.label :Price %>
+        <%= form.label :price, "Price" %>
         <%= form.text_field :price %>
     </div>
-  
+
     <div class="field">
-        <%= form.label :Link %>
+        <%= form.label :link, "Link" %>
         <%= form.text_field :link %>
     </div>
   
