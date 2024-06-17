@@ -1,2 +1,22 @@
-<h1>Friends#show</h1>
-<p>Find me in app/views/friends/show.html.erb</p>
+<h1><%= @friend.name %></h1>
+<p>Birthday: <%= @friend.birthday.strftime("%B %d") %></p>
+
+<h2>Gifts</h2>
+<ul>
+    <% @friend.gifts.each do |gift| %>
+        <li>
+            <%= gift.description %> - 
+            <%= number_to_currency(gift.price) %> - 
+            <% if gift.link.present? %>
+            <% formatted_link = gift.link.start_with?('http://', 'https://') ? gift.link : "http://#{gift.link}" %>
+            <%= link_to 'Link', formatted_link, target: '_blank' %>
+            <% end %> - 
+            <%= link_to 'Edit', edit_friend_gift_path(@friend, gift) %> | 
+            <%= link_to 'Delete', friend_gift_path(@friend, gift), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </li>
+    <% end %>
+</ul>
+<%= link_to 'Add Gift', new_friend_gift_path(@friend) %>
+
+<%= link_to 'Edit Friend', edit_friend_path(@friend) %> |
+<%= link_to 'Back to Friends', friends_path %>

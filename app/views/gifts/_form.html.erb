@@ -1,0 +1,20 @@
+<%= form_with(model: [@friend, @gift], local: true) do |form| %>  
+    <div class="field">
+        <%= form.label :Description %>
+        <%= form.text_field :description %>
+    </div>
+  
+    <div class="field">
+        <%= form.label :Price %>
+        <%= form.text_field :price %>
+    </div>
+  
+    <div class="field">
+        <%= form.label :Link %>
+        <%= form.text_field :link %>
+    </div>
+  
+    <div class="actions">
+        <%= form.submit %>
+    </div>
+<% end %>
