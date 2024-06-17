@@ -1,9 +1,13 @@
 // app/javascript/application.js
 import "@hotwired/turbo-rails"
 import * as bootstrap from "bootstrap"
+import * as Rails from "@rails/ujs"
 
 window.bootstrap = bootstrap
+Rails.start()
 
+import { Turbo } from "@hotwired/turbo-rails"
+Turbo.start()
 
 document.addEventListener("turbo:load", () => {
     const addGiftButton = document.querySelector("#add-gift");

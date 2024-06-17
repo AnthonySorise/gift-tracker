@@ -48,6 +48,7 @@ gem "bootsnap", require: false
 gem "bootstrap", "~> 5.1.0"
 gem "jquery-rails"
 gem "simple_form", "~> 5.1.0"
+gem 'rails-ujs'
 
 
 group :development, :test do
